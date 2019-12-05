@@ -3,11 +3,12 @@ def main():
 	import sys
 	import json
 	import datetime
-	
+	import codecs
+
 	filename=sys.argv[1]
 	print ("Filename: ", filename)
-	with open(filename+'.txt','w') as w:
-		with open(filename) as f:
+	with codecs.open(filename+'.txt', 'w', 'utf-8') as w:
+		with codecs.open(filename, 'r', 'utf-8') as f:
 			data=json.loads(f.read())
 			labels = data['results']['speaker_labels']['segments']
 			speaker_start_times={}
