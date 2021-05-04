@@ -14,7 +14,7 @@ This script creates a transcript that's human-readable.
 3. Results will be written in your current working directory as `[FILENAME]-transcript.txt`
 
 ## S3/Lambda Directions
-
+0. Probably worth checking your lambda Memory/Execution time settings, depending on the size of the files you'll work with. I like ~256MB and ~15 seconds for general use.
 1. Create an S3 bucket with two folders; input/ and output/
 2. Create a Lambda function that triggers on CreateObject in input/ (Triggers section of the UI)
 3. Give the function access to write to S3/output (Resources section of the UI)
